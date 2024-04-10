@@ -18,23 +18,37 @@ struct ContentView: View {
 var body: some View {
     NavigationView{
             VStack {
-                List{
-//                    Spacer()
-                    ForEach(notess.indices, id:\.self){ index in
-                        NavigationLink(destination: NoteDisplay(), label: {
-                            VStack{
-                                Text ("\(notess[index].title)")
-                                Text ("\(notess[index].content)")
-                            }
-                        })
-                        
-                  
+                VStack{
+                    List{
+                        //                    Spacer()
+                        ForEach(notess.indices, id:\.self){ index in
+                            //                      var titulo : String = "\(notess[index].title)"
+                            //                      var contenido : String = "\(notess[index].content)"
+                            NavigationLink(destination: NoteDisplay(title: notess[index].title, content: notess[index].content), label: {
+                                VStack{
+                                    Text ("\(notess[index].title)")
+                                        .bold()
+                                    Text ("\(notess[index].content)")
+                                }
+                            })
+                            
+                            
+                            
+                        }
                         
                     }
+                    .padding()
                     
+
                 }
                 .padding()
-
+                .frame(width: 350, alignment: .leading)
+                .background(Color(UIColor.systemGray6))
+                .cornerRadius(10)
+                
+               
+                
+               
                 
                 NavigationLink(destination: NoteTaker(notes: $notess), label:{
                     Text("Add Task")
@@ -45,13 +59,15 @@ var body: some View {
                         .cornerRadius(10)
                        
                 })
-//                .position(x:195, y:320)
+            
                 
-
+                .navigationTitle("Notes")
+                .ignoresSafeArea()
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                
                 
             }
             
-            .navigationTitle("Notes")
             
     }
     }

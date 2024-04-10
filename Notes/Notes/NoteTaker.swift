@@ -10,7 +10,7 @@ import SwiftUI
 struct NoteTaker: View {
     @State var input : String = ""
     @State var textStored : String = ""
-    @Binding var notes : [Note]   
+    @Binding var notes : [Note]
     var body: some View {
         NavigationView{
             VStack {                
@@ -45,7 +45,7 @@ struct NoteTaker: View {
     }
     }
 func notary(){
-    print("hola")
+    
     let newNote = Note(title: input, content: textStored)
     notes.append(newNote)
 }
