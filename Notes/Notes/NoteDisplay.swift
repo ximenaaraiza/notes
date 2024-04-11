@@ -12,17 +12,19 @@ struct NoteDisplay: View {
     var content : String
     
     var body: some View {
-        NavigationView{
+        //display the content you entered
             VStack{
                 Text("\(content)")
                   Spacer()
             }
+            //makes the grey box and adds title 
             .padding()
             .navigationTitle(title)
             .frame(width: 350, alignment: .leading)
             .background(Color(UIColor.systemGray6))
             .cornerRadius(10)
-        }
+        
+       
     }
 }
 
