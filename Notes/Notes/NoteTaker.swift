@@ -12,8 +12,8 @@ struct NoteTaker: View {
     @State var textStored : String = ""
     @Binding var notes : [Note]
     var body: some View {
-        NavigationView{
-            VStack {                
+        NavigationView{             //Comment this line out
+            VStack {
                 TextField("Title...", text: $input)
                     .padding()
                     .background(Color(UIColor.systemGray6))
@@ -39,10 +39,9 @@ struct NoteTaker: View {
                 .cornerRadius(30)
                 
             }
-           
-            . navigationTitle("New Note")
+            .navigationTitle("Add a note")
             
-    }
+    } //comment this line out
     }
 func notary(){
     

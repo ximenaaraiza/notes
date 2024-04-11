@@ -56,14 +56,14 @@ var body: some View {
                         .foregroundStyle(Color.white)
                         .background(Color.blue)
                         .font(.system(size: 20))
-                        .cornerRadius(10)
+                        .cornerRadius(10)               //Comment this line out
                        
                 })
             
                 
                 .navigationTitle("Notes")
-                .ignoresSafeArea()
-                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                .ignoresSafeArea()                  //Comment this line out
+                .border(Color.black)                //Comment this line out
                 
                 
             }
